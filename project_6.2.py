@@ -1,3 +1,6 @@
+#Function gets a text string, and returns the string that contains the signal diagram 
+#corresponding to the given text encoded by the international Morse code.
+#Function ignore punctuation and characters that are not part of the Latin alphabet, and avoids letter case.
 def encode_morze(text):
     morse_code = {
         "A" : ".-", 

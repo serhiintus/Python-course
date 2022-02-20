@@ -1,12 +1,14 @@
+#this function gets string of any length, which can contain Latin letters, spaces and punctuation marks (,.:;!?-"')
+#and returns list of strings in lower case, which most often appear in the text
 def find_most_frequent(text):
-    signs = [',','.',':','!','?',';','-']
-    string_without_signs = ''
+    marks = [',','.',':','!','?',';','-', '(', ')', '"', "'"]
+    string_without_marks = ''
     for i in text:
-        if i in signs:
-            string_without_signs += ' '
+        if i in marks:
+            string_without_marks += ' '
         else:
-            string_without_signs += i.lower()
-    words_list = string_without_signs.split()
+            string_without_marks += i.lower()
+    words_list = string_without_marks.split()
     if len(words_list) < 1:
         return words_list
     counted_words = {}
@@ -19,4 +21,3 @@ def find_most_frequent(text):
             result.append(i)
     result.sort()
     return result
-print(find_most_frequent('polsat,, polsa!?, karl'))
