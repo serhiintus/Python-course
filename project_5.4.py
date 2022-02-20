@@ -1,3 +1,8 @@
+#this function gets two arguments - list 'folder' and string 'filename'
+#and return string - full path to the file or folder 'filename' in the structure 'folder'
+#example: 
+#file_search(['D:', ['recycle bin'], ['tmp', ['old'], ['new folder1', 'asd.txt', 'asd.bak', 'find.me']], 'hey.py'], 'find.me')
+#return D:/tmp/new folder1/find.me
 def file_search(folder, filename):
     if filename in folder[1:]:
         pth = [folder[0]]
@@ -12,6 +17,3 @@ def file_search(folder, filename):
     else:
         return False
     return False
-
-arr = [  '/home', ['user1'], ['user2', ['my pictures'], ['desktop', 'not this', 'and not this', ['new folder', 'hereiam.py' ] ] ], 'work.ovpn', 'prometheus.7z', ['user3', ['temp'], ], 'hey.py']
-print(file_search(arr, 'hereiam.py'))
