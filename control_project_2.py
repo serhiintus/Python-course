@@ -1,6 +1,12 @@
+#This function gets three arguments - first is integer or string, which represents number, 
+#second is the radix of the number system to which the first argument belongs, 
+#third is the radix of the number system (1 <= n, m <= 36)
+#and returns string - the representation of first argument in number system with radix third argument.
+#If the first argument is not a number or a string, or cannot be a non-negative integer 
+#represents in a number system based on second argument, function returns the logical constant False.
 def convert_n_to_m(x, n, m):
     convert_num = ''
-    if isinstance(x, int):
+    if isinstance(x, int) and x >= 0:
         convert_num = str(x).upper()
     elif isinstance(x, str):
         convert_num = x.upper()
@@ -43,8 +49,9 @@ def convert_n_to_m(x, n, m):
             decimal_num = decimal_num // m
         converted_num_list.reverse()
         return ''.join(converted_num_list)
-    
-    
-
-
-print(convert_n_to_m(123123123123123123123, 11, 16))
+#Examples:    
+print(convert_n_to_m(777, 10, 2)) #result 1100001001
+print(convert_n_to_m('11111', 10, 16)) #result 2B67
+print(convert_n_to_m('7e6', 16, 2)) #result 11111100110
+print(convert_n_to_m('ZZZZ', 36, 13)) #result 46A672
+print(convert_n_to_m(-25, 10, 2)) #result False
