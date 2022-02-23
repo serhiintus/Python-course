@@ -1,4 +1,7 @@
+#class SuperStr inherits the functionality of the standard type string and contains 2 new methods
 class SuperStr(str):
+    #this method gets 1 argument and returns True or False depending on whether the current string can be obtained 
+    #by an integer number of iterations of the argument. Returns False if argument is not a string
     def is_repeatance(self, s):
         if not isinstance(s, str):
             return False
@@ -11,6 +14,8 @@ class SuperStr(str):
             return True
         else:
             return False
+    #this method returns True or False depending on whether the string is a palindrome. Method ignores letter case.
+    #An empty string is considered a palindrome
     def is_palindrom(self):
         if len(self) < 1:
             return True
@@ -22,7 +27,17 @@ class SuperStr(str):
             j -= 1
         return True
 
-
-string_basic = SuperStr('q')
-print(string_basic.is_repeatance('q'))
+#EXAMPLES:
+s = SuperStr('123123123123')
+print (s.is_repeatance('123')) # True
+print (s.is_repeatance('123123')) # True
+print (s.is_repeatance('123123123123')) # True
+print (s.is_repeatance('12312')) # False
+print (s.is_repeatance(123)) # False
+print (s.is_palindrom()) # False
+print (s) # 123123123123 (string)
+print (int(s)) # 123123123123 (integer)
+print (s + 'qwe') # 123123123123qwe
+p = SuperStr('123_321')
+print (p.is_palindrom()) # True
 

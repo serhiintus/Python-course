@@ -16,3 +16,6 @@ def saddle_point(matrix):
             if flag:
                 return (i, j)
     return False
+#examples:
+print(saddle_point([[0,0,0],[2,1,2],[1,0,1]])) #(1, 1)
+print(saddle_point([[8,3,0,1,2,3,4,8,1,2,3],[3,2,1,2,3,9,4,7,9,2,3],[7,6,0,1,3,5,2,3,4,1,1]])) #(1, 2)

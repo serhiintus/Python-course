@@ -1,6 +1,10 @@
+#class CombStr represents a string of characters
 class CombStr(object):
+    #constructor gets 1 argument - string
     def __init__(self, basic_string):
         self.basic_string = basic_string
+    #this method gets 1 argument a non-negative integer, and returns 
+    #the number of all different substrings with length equal to argument contained in the string
     def count_substrings(self, length):
         if length == 0 or length > len(self.basic_string):
             return 0
@@ -12,8 +16,10 @@ class CombStr(object):
             end += 1
         return len(list_parts)
 
-
-s0 = CombStr('?')
-print(s0.count_substrings(1))
-s3  = CombStr('qweqweqwe')
-print(s3.count_substrings(4))
+#EXAMPLES:
+s0 = CombStr('qqqqqqweqqq%')
+print (s0.count_substrings(0)) # 0
+print (s0.count_substrings(1)) # 4
+print (s0.count_substrings(2)) # 5
+print (s0.count_substrings(5)) # 7
+print (s0.count_substrings(15)) # 0

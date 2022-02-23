@@ -18,3 +18,6 @@ def counter(a, b):
             if i == j:
                 count += 1
     return count
+#examples:
+print(counter(1234567890, 987654321)) #9
+print(counter(123123123, 321456789)) #3

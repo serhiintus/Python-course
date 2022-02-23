@@ -1,3 +1,5 @@
+#function gets 2 arguments - integers, month (numbering starts with 1)
+#and year, and returns 1 string containing the calendar page for that month
 def create_calendar_page(month = None, year = None):
     import calendar
     from datetime import datetime
@@ -22,7 +24,7 @@ def create_calendar_page(month = None, year = None):
     output_str = f'{header_dash}\n{days_abr}\n{header_dash}\n{month_str}\n'
     return output_str
 
-
+#EXAMPLES:
 print (create_calendar_page(1))
 print (create_calendar_page())
 print (create_calendar_page(3))

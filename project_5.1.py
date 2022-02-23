@@ -6,3 +6,5 @@ def clean_list(list_to_clean):
                 list_to_clean[j] = None
     list_new = [i for i in list_to_clean if i != None]
     return list_new
+#example:
+print(clean_list([1, 1.0, '1', 2, 2.0, '2', 3, 3.0, '3', 1, 2, 3, 1.0, 2.0, 3.0, '1, 2, 3', 1.0, 2, '3'])) #[1, 1.0, '1', 2, 2.0, '2', 3, 3.0, '3', '1, 2, 3']
